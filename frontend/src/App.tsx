@@ -2,10 +2,12 @@ import './App.css'
 import Header from './components/Header'
 import styled from 'styled-components';
 import EventDetails from './components/EventDetails';
+import FormComponent from './components/FormComponent';
 
 export const WrapperAppStyle = styled.div`
  display: flex;
- justify-content: center;
+ flex-direction: column;
+ align-items: center;
 `
 
 const App = () => {
@@ -14,7 +16,8 @@ const App = () => {
     <>
      <Header />
      <WrapperAppStyle>
-       <EventDetails />
+        <EventDetails />
+        <FormComponent />
      </WrapperAppStyle>
     </>
   )

@@ -10,3 +10,8 @@ body,
   padding: 0;
   margin: 0;
 }
+
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+}
