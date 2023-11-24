@@ -9,13 +9,18 @@ const FormComponent = () => {
           <h3>Set a check back reminder</h3>
         </InputWrapper>
         <InputWrapper justiContent="space-between">
-          <Input width="30%" type="date"/> 
-          <Input width="20%" type="time" id="time_id"/> 
-          <ButtonCouter />
-          {/* <Input width="35%" type="date"/>  */}
+          <div className="grid-class">
+            <Input type="date"/> 
+            <Input type="time" id="time_id"/> 
+            <ButtonCouter />
+          </div>
         </InputWrapper>
         <InputWrapper>
-          <Input width="100%" type="email" placeholder="Enter your email"/> 
+          <Input 
+            width="100%" 
+            type="email" 
+            placeholder="Enter your email"
+          /> 
         </InputWrapper>
         <InputWrapper>
           <Button>Submit</Button>

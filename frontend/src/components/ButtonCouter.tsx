@@ -1,32 +1,35 @@
 import styled from 'styled-components';
 import { rem } from "polished";
 
-interface Props {
-  
-}
-
 export const ButtonCounterWrapper = styled.div`
   display: flex;
+  justify-content: space-around;
   align-items: center;
   background-color: #f1f2f6;
   padding: 0 5px;
+  border-radius: 5px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0;
+  }
 `
 
 export const ButtonCounterStyle = styled.span`
-  width: 25px;
-  height: 25px;
+  width: ${rem("25px")};
+  height: ${rem("25px")};
   text-align: center;
-  /* padding: ${rem('2px')}; */
   background-color: white;
   border-radius: 50%;
+  font-size: ${rem("20px")};
   cursor: pointer;
 `
 
-const ButtonCouter = (props: Props) => {
+const ButtonCouter = () => {
   return (
     <ButtonCounterWrapper>
         <ButtonCounterStyle>-</ButtonCounterStyle>
-          <p className="mb-0">in { "diffDays" } Days</p>
+          <p className="mb-0">in { "5"} Days</p>
         <ButtonCounterStyle>+</ButtonCounterStyle>
     </ButtonCounterWrapper>
   )

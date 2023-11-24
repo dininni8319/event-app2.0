@@ -14,11 +14,11 @@ const App = () => {
 
   return (
     <>
-     <Header />
-     <WrapperAppStyle>
-        <EventDetails />
-        <FormComponent />
-     </WrapperAppStyle>
+      <Header />
+      <WrapperAppStyle>
+          <EventDetails />
+          <FormComponent />
+      </WrapperAppStyle>
     </>
   )
 }

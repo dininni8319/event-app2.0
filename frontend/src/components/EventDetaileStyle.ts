@@ -2,56 +2,37 @@ import styled from 'styled-components';
 import { rem } from 'polished'
 
 export const EventWrapper = styled.div`
-  width: 55%;
-  /* height: 40vh; */
-  min-height: 30vh;
-  display: flex;
-  justify-content: space-between;
+  margin-top: ${rem("20px")};
+  width: 80%;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
   border-bottom: 1px solid #ccc;
-  position: relative;
-  top: ${rem('20px')};
-  padding-bottom: ${rem('40px')};
+  padding-bottom: ${rem('20px')};
 
-  @media screen and (max-width: 700px) {
-    width: 100%;
-    min-height: 50vh;
-    display: flex;
-    justify-content: start;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
-
-  @media screen and (max-width: 1000px) {
-    width: 80%;
-    min-height: 30vh;
-    padding-bottom: ${rem('20px')};
-  }
-
-  @media screen and (min-width: 1600px) {
-    width: 45%;
-    height: 35vh;
-    /* padding-bottom: ${rem('30px')}; */
+  
+  @media screen and (min-width: 1200px) {
+    width: 55%;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 5px;
   }
 `
 
 export const EventImageStyle = styled.img`
-  width: 30%;
+  width: ${rem('260px')};
   height: 100%;
+  object-fit: cover;
   border-radius: 10px;
-
-  @media screen and (max-width: 750px) {
+  
+  @media screen and (max-width: 768px) {
     display: none;
-  }
-
-  @media screen and (min-width: 1000px) {
-    width: 35%;
-  }
-
-  @media screen and (min-width: 1600px) {
-   width: 30%;
   }
 `
 
 export const EventDetailStyle = styled.div`
-  width: 50vw;
+  width: 80%;
   height: 100%;
   font-size: ${rem('18px')};
   font-weight: 400;
@@ -64,18 +45,21 @@ export const EventDetailStyle = styled.div`
   }
 
   p {
-    font-size: ${rem('14px')};
+    font-size: ${rem('16px')};
     padding-bottom: ${rem('20px')};
   }
 
-  @media screen and (max-width: 750px) {
-    width: 90vw;
-    min-height: 60%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    p {
+      font-size: ${rem('15px')};
+      padding-bottom: ${rem('10px')};
+      line-height: ${rem('20px')};
+    }
   }
 
   @media screen and (min-width: 1000px) {
-    width: 50%;
-    
+    width: 70%;
     p {
       line-height: 26px;
       padding-bottom: 0;
@@ -84,28 +68,37 @@ export const EventDetailStyle = styled.div`
 `
 
 export const EventTitleWrapper = styled.div`
+  width: 100%;
+  margin-top: 5px;
   display: flex;
+  align-items: end;
 
   span {
     background-color: #6800ed;
     text-transform: lowercase;
     color: white;
+    padding: ${rem('3px')} ${rem('6px')};
+    margin-left: ${rem('5px')} ;
+    text-align: center;
     font-size: 14px;
     border-radius: ${rem('10px')};
+    height:  ${rem('20px')};
+    font-weight: 200;
   }
 `
 
 export const EventTitle = styled.h1`
   text-transform: capitalize;
   font-weight: 400;
-  font-size: ${rem('32px')};
-  margin-top: 0;
+  font-size: ${rem('25px')};
+  padding: 0;
+  margin: 0;
 `
 
 export const EventDateComponent = styled.div`
   background-color: black;
   width: 100%;
-  height: ${rem("129px")};
+  height: ${rem("100px")};
   border-radius: 5px;
   color: white;
   display: flex;
@@ -115,14 +108,13 @@ export const EventDateComponent = styled.div`
 export const EventDateWrapper = styled.div`
   position: relative;
   left: 8%;
+
   div {
     display: flex;
     padding-bottom: ${rem('3px')};
 
     span {
-      font-weight: 400;
-      font-size: ${rem('14px')};
-      padding-left: ${rem('5px')};
+      margin-left: ${rem('5px')};
     }
   }
 
