@@ -5,6 +5,7 @@ import {
 import ButtonCouter from './ButtonCouter'
 import { FormWrapperStyle } from './FormCompontentStyle'
 import { Input, InputWrapper, Button } from './FormCompontentStyle'
+import { formatDate } from '@/utils'
 
 interface FormData {
   email: string
@@ -16,9 +17,10 @@ interface FormData {
 interface Props {
   inputChange: (event: ChangeEvent<HTMLInputElement>) => void
   formData: FormData
-  increment: (event: MouseEvent<HTMLButtonElement>) => void
-  decrement: (event: MouseEvent<HTMLButtonElement>) => void
+  increment: (event: any) => void
+  decrement: (event: any) => void
   count: number
+  handleSubmit: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
 const FormComponent = ({
@@ -26,14 +28,17 @@ const FormComponent = ({
   formData,
   increment,
   decrement,
+  handleSubmit,
   count
 }: Props) => {
+  const today = formatDate(new Date())
+
   const maxDate = '2023-12-27'
   const disabled =
     !formData.email || !formData.date || !formData.time || !formData.days
 
   return (
-    <FormWrapperStyle>
+    <FormWrapperStyle onSubmit={handleSubmit}>
       <InputWrapper>
         <h3>Set a check back reminder</h3>
       </InputWrapper>
@@ -42,6 +47,7 @@ const FormComponent = ({
           <Input
             type="date"
             name="date"
+            min={today}
             max={maxDate}
             defaultValue={formData.date}
             onChange={inputChange}
@@ -73,7 +79,7 @@ const FormComponent = ({
         />
       </InputWrapper>
       <InputWrapper>
-        <Button disabled={disabled}>
+        <Button type='submit' disabled={disabled}>
           {disabled ? 'Complete the form' : 'Submit'}
         </Button>
       </InputWrapper>

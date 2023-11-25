@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { rem } from 'polished'
-import { MouseEvent } from 'react'
 
 export const ButtonCounterWrapper = styled.div`
   display: flex;
@@ -28,8 +27,8 @@ export const ButtonCounterStyle = styled.button`
   cursor: pointer;
 `
 interface Props {
-  increment: (event: MouseEvent<HTMLButtonElement>) => void
-  decrement: (event: MouseEvent<HTMLButtonElement>) => void
+  increment: (event: any) => void
+  decrement: (event: any) => void
   count: number
 }
 

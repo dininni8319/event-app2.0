@@ -116,3 +116,26 @@ Completed Code:
 github: https://github.com/ed-roh/finance-app
 github theme: https://github.com/ed-roh/finance-app...
 github data: https://github.com/ed-roh/finance-app...
+
+<h2>Backend Setup</h2>
+
+<h3>Installation</h3>
+- npm init -y 
+- pnpm install express typescript ts-node @types/node @types/express
+- touch tsconfig.json
+- copy this in the tsconfig.json
+
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
+
+- mkdir src 
+- touch src/index.ts
+- pnpm i body-parser mongoose cors morgan  nodemon dotenv
