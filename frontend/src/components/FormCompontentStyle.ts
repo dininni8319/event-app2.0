@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { rem } from 'polished'
 
 export const FormWrapperStyle = styled.form`
@@ -6,14 +6,18 @@ export const FormWrapperStyle = styled.form`
   flex-direction: column;
   height: 50vh;
   width: 55%;
-  margin-top: 0.650;
-  
+  margin-top: 0.65;
+
   @media (max-width: 768px) {
-    width: 95%;
+    width: 100%;
   }
 
   @media (max-width: 1200px) {
     width: 80%;
+  }
+
+  @media (min-width: 1500px) {
+    width: 40%;
   }
 `
 
@@ -28,7 +32,7 @@ export const InputWrapper = styled.div`
     font-size: 25px;
     font-weight: 400;
   }
-  
+
   .grid-class {
     width: 100%;
     display: grid;
@@ -41,7 +45,7 @@ export const InputWrapper = styled.div`
       display: grid;
       grid-template-columns: 1fr;
     }
- }
+  }
 `
 export const Input = styled.input`
   box-sizing: border-box;
@@ -53,7 +57,7 @@ export const Input = styled.input`
   outline: none;
   cursor: pointer;
   border-radius: 5px;
-  text-align: ${(props: any) => props.id === "time_id" ? "center" : 'start'};
+  text-align: ${(props: any) => (props.id === 'time_id' ? 'center' : 'start')};
 
   @media (max-width: 768px) {
     width: 100%;
@@ -67,6 +71,6 @@ export const Button = styled.button`
   background-color: #6800ed;
   border: none;
   outline: none;
-  cursor: pointer;
+  cursor: ${(props: any) => (props.disabled ? 'inherit' : 'pointer')};
   border-radius: 5px;
 `

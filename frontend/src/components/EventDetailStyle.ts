@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { rem } from 'polished'
 
 export const EventWrapper = styled.div`
-  margin-top: ${rem("20px")};
+  margin-top: ${rem('20px')};
   width: 80%;
   display: grid;
   grid-template-columns: 5fr 1fr;
@@ -12,12 +12,17 @@ export const EventWrapper = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-  
+
   @media screen and (min-width: 1200px) {
     width: 55%;
     grid-template-columns: 4fr 1fr;
     grid-gap: 5px;
   }
+   
+  @media screen and (min-width: 1500px) {
+    width: 40%;
+  }
+
 `
 
 export const EventImageStyle = styled.img`
@@ -25,7 +30,7 @@ export const EventImageStyle = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  
+
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -78,11 +83,11 @@ export const EventTitleWrapper = styled.div`
     text-transform: lowercase;
     color: white;
     padding: ${rem('3px')} ${rem('6px')};
-    margin-left: ${rem('5px')} ;
+    margin-left: ${rem('5px')};
     text-align: center;
     font-size: 14px;
     border-radius: ${rem('10px')};
-    height:  ${rem('20px')};
+    min-height: ${rem('20px')};
     font-weight: 200;
   }
 `
@@ -93,12 +98,17 @@ export const EventTitle = styled.h1`
   font-size: ${rem('25px')};
   padding: 0;
   margin: 0;
+
+  @media screen and (max-width: 700px) {
+    font-size: ${rem('18px')};
+    padding-right: 5px;
+  }
 `
 
 export const EventDateComponent = styled.div`
   background-color: black;
   width: 100%;
-  height: ${rem("100px")};
+  height: ${rem('100px')};
   border-radius: 5px;
   color: white;
   display: flex;
@@ -120,5 +130,11 @@ export const EventDateWrapper = styled.div`
 
   h3 {
     margin-top: 0;
+  }
+
+  @media screen and (max-width: 700px) {
+    h3 {
+      font-size: ${rem('18px')};
+    }
   }
 `

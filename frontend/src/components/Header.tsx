@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import thumbUp from '@/assets/thumb-up.svg'
-import { rem } from "polished";
+import { rem } from 'polished'
 
 export const HeaderStyle = styled.div`
   width: 100%;
@@ -11,17 +11,17 @@ export const HeaderStyle = styled.div`
   align-items: center;
 
   h4 {
-    margin-left: ${rem("5px")};
+    margin-left: ${rem('5px')};
   }
 `
 
 export const Icon = styled.img`
   width: 24px;
   height: 24px;
-  `
+`
 
 export const HeaderIcon = styled(Icon)`
-  transform: rotate(-16deg) ;
+  transform: rotate(-16deg);
 `
 
 const Header = () => {

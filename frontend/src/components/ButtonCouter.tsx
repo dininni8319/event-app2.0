@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-import { rem } from "polished";
+import styled from 'styled-components'
+import { rem } from 'polished'
+import { MouseEvent } from 'react'
 
 export const ButtonCounterWrapper = styled.div`
   display: flex;
@@ -15,22 +16,29 @@ export const ButtonCounterWrapper = styled.div`
   }
 `
 
-export const ButtonCounterStyle = styled.span`
-  width: ${rem("25px")};
-  height: ${rem("25px")};
+export const ButtonCounterStyle = styled.button`
+  width: ${rem('25px')};
+  height: ${rem('25px')};
   text-align: center;
   background-color: white;
   border-radius: 50%;
-  font-size: ${rem("20px")};
+  border: none;
+  font-size: ${rem('20px')};
+  outline: none;
   cursor: pointer;
 `
+interface Props {
+  increment: (event: MouseEvent<HTMLButtonElement>) => void
+  decrement: (event: MouseEvent<HTMLButtonElement>) => void
+  count: number
+}
 
-const ButtonCouter = () => {
+const ButtonCouter = ({ increment, decrement, count }: Props) => {
   return (
     <ButtonCounterWrapper>
-        <ButtonCounterStyle>-</ButtonCounterStyle>
-          <p className="mb-0">in { "5"} Days</p>
-        <ButtonCounterStyle>+</ButtonCounterStyle>
+      <ButtonCounterStyle onClick={decrement}>-</ButtonCounterStyle>
+      <p className="mb-0">{`in ${count} Days`}</p>
+      <ButtonCounterStyle onClick={increment}>+</ButtonCounterStyle>
     </ButtonCounterWrapper>
   )
 }
