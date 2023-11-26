@@ -1,6 +1,5 @@
 import { 
   ChangeEvent,
-  MouseEvent
 } from 'react'
 import ButtonCouter from './ButtonCouter'
 import { FormWrapperStyle } from './FormCompontentStyle'
@@ -20,7 +19,7 @@ interface Props {
   increment: (event: any) => void
   decrement: (event: any) => void
   count: number
-  handleSubmit: (event: MouseEvent<HTMLButtonElement>) => void
+  handleSubmit: (event: any) => void
 }
 
 const FormComponent = ({
@@ -42,7 +41,7 @@ const FormComponent = ({
       <InputWrapper>
         <h3>Set a check back reminder</h3>
       </InputWrapper>
-      <InputWrapper justiContent="space-between">
+      <InputWrapper justicontent="space-between">
         <div className="grid-class">
           <Input
             type="date"

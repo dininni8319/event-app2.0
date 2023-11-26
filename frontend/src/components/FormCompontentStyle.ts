@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { rem } from 'polished'
 
 export const FormWrapperStyle = styled.form`
@@ -21,10 +21,17 @@ export const FormWrapperStyle = styled.form`
   }
 `
 
-export const InputWrapper = styled.div`
+interface Props {
+  justicontent?: string
+}
+
+export const InputWrapper = styled.div<Props>`
   display: flex;
-  justify-content: ${(props: any) =>
-    props.justiContent ? props.justiContent : 'start'};
+  ${(props) =>
+    props.justicontent &&
+    css`
+      justify-content: ${props.justicontent === 'space-between' ? 'space-between' : 'flex-start'};
+    `}
   margin-bottom: ${rem('5px')};
   width: 100%;
 
@@ -47,6 +54,7 @@ export const InputWrapper = styled.div`
     }
   }
 `
+
 export const Input = styled.input`
   box-sizing: border-box;
   width: ${(props: any) => (props.width ? props.width : '100%')};

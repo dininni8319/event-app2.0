@@ -43,13 +43,13 @@ const App = () => {
       })
 
       if (response.ok) {
-        alert('Your email has been sent successfully!')
         setFormData({
           email: '',
           date: today,
           time: '13:00',
           days: 0
         })
+        alert('Your email has been sent successfully!')
       } else {
         alert('Something went wrong!')
       }

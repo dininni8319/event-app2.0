@@ -15,7 +15,6 @@ const EventSchema: Schema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true
   },
   date: {
     type: String,

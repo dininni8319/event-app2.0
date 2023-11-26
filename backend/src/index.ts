@@ -19,14 +19,13 @@ app.use(express.json())
 app.use(cors());
 
 app.post('/api/event',  async (req, res, next) => {
-  console.log("🚀 ~ file: event-route.ts:6 ~ router.post ~ req:", req.body)
   try {
     const { email, date, time } = req.body
   
     if (!email || !date || !time) {
       return res.status(400).json({ message: 'Please fill all fields' })
     }
-    
+
     const event = {
       email,
       date,

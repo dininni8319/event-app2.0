@@ -27,7 +27,7 @@ export const HeaderIcon = styled(Icon)`
 const Header = () => {
   return (
     <HeaderStyle>
-      <HeaderIcon src={thumbUp} /> <h4>Event App</h4>
+      <HeaderIcon src={thumbUp} alt='header icon' /> <h4>Event App</h4>
     </HeaderStyle>
   )
 }

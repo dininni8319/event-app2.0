@@ -16,7 +16,13 @@ freshdb: ## reset db
 	
 dev: ## serve for development
 	@echo "starting Dev enviroment"
-	@cd frontend && npm run dev 
+	@cd frontend && pnpm run dev 
+	@cd backend && pnpm run dev
+
+build: ## build for production
+	@echo "starting building"
+	@cd frontend && pnpm run build
+	@cd backend && pnpm run build
 
 install: ## performs initial setup
 	@echo "Installing libraries"

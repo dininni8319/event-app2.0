@@ -30,14 +30,17 @@ const EventDetails = () => {
         <EventDateComponent>
           <EventDateWrapper>
             <div>
-              <Icon src={clock} />
+              <Icon src={clock} alt='icon' />
               <span>EVENT DATE</span>
             </div>
             <h3>Fri 17. Dec | 18:00 PM </h3>
           </EventDateWrapper>
         </EventDateComponent>
       </EventDetailStyle>
-      <EventImageStyle src={eventImg} />
+      <EventImageStyle 
+        src={eventImg} 
+        alt="event"
+      />
     </EventWrapper>
   )
 }
