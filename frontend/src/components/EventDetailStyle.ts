@@ -108,7 +108,7 @@ export const EventTitle = styled.h1`
 export const EventDateComponent = styled.div`
   background-color: black;
   width: 100%;
-  height: ${rem('100px')};
+  min-height: ${rem('100px')};
   border-radius: 5px;
   color: white;
   display: flex;
