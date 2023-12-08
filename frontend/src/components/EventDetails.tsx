@@ -33,7 +33,7 @@ const EventDetails = () => {
               <Icon src={clock} alt='icon' />
               <span>EVENT DATE</span>
             </div>
-            <h3>Fri 17. Dec | 18:00 PM </h3>
+            <h3>Fri 27. Dec | 18:00 PM </h3>
           </EventDateWrapper>
         </EventDateComponent>
       </EventDetailStyle>
